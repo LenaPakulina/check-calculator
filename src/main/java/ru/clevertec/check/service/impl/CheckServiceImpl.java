@@ -9,6 +9,7 @@ import main.java.ru.clevertec.check.service.CheckService;
 import main.java.ru.clevertec.check.service.DiscountService;
 import main.java.ru.clevertec.check.service.ProductService;
 import main.java.ru.clevertec.check.utils.argparser.LaunchOptions;
+import main.java.ru.clevertec.check.utils.validator.CheckValidator;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Optional;
 public class CheckServiceImpl implements CheckService {
     private final ProductService productService;
     private final DiscountService discountService;
+    private final CheckValidator checkValidator = new CheckValidator();
 
     public CheckServiceImpl(ProductService productService, DiscountService discountService) {
         this.productService = productService;
@@ -27,8 +29,12 @@ public class CheckServiceImpl implements CheckService {
 
     @Override
     public CheckDTO createCheck(LaunchOptions options) {
+        checkValidator.checkStartBalance(options.getBalanceDebitCard());
+
         Optional<DiscountCard> discountCard = discountService.findByCardNum(options.getDiscountCardNum());
         Map<Product, Integer> productCountMap = productService.getProductEntityByOptions(options);
+
+        checkValidator.checkProductsAmount(productCountMap);
 
         double totalPrice = 0;
         double totalDiscountSum = 0;
@@ -54,6 +60,8 @@ public class CheckServiceImpl implements CheckService {
             totalDiscountSum += productDiscount;
             totalPriceWithDiscount += productPriceWithDiscount;
         }
+
+        checkValidator.checkBalance(options.getBalanceDebitCard(), totalPriceWithDiscount);
 
         CheckDTO checkDTO = new CheckDTO();
         checkDTO.setCreated(LocalDateTime.now());

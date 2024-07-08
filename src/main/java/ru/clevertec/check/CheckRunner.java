@@ -1,7 +1,11 @@
 package main.java.ru.clevertec.check;
 
 import main.java.ru.clevertec.check.output.CheckConverterToString;
+import main.java.ru.clevertec.check.output.ErrorMsgConverterToString;
+import main.java.ru.clevertec.check.output.PrintToFile;
 import main.java.ru.clevertec.check.output.impl.SimpleCheckConverterToString;
+import main.java.ru.clevertec.check.output.impl.SimpleErrorMsgConverterToString;
+import main.java.ru.clevertec.check.output.impl.SimplePrintToFile;
 import main.java.ru.clevertec.check.service.CheckService;
 import main.java.ru.clevertec.check.service.DiscountService;
 import main.java.ru.clevertec.check.service.ProductService;
@@ -19,6 +23,7 @@ import main.java.ru.clevertec.check.utils.filereader.impl.CsvProductFileReader;
 
 public class CheckRunner {
     public static void main(String[] args) {
+        PrintToFile printer = new SimplePrintToFile();
         try {
             LaunchOptions options = ArgParser.parse(args);
             CsvDiscountFileReader discountFileReader = new CsvDiscountFileReader();
@@ -34,9 +39,14 @@ public class CheckRunner {
             CheckService checkService = new CheckServiceImpl(productService, discountService);
 
             CheckConverterToString print = new SimpleCheckConverterToString();
-            System.out.println(print.toString(checkService.createCheck(options)));
+            String str = print.toString(checkService.createCheck(options));
+            System.out.println(str);
+            printer.print("./result.csv", str);
         } catch (Exception e) {
-            e.printStackTrace();
+            ErrorMsgConverterToString print = new SimpleErrorMsgConverterToString();
+            String str = print.toString(e.getMessage());
+            System.out.println(str);
+            printer.print("./result.csv", str);
         }
     }
 }
