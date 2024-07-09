@@ -1,5 +1,6 @@
 package main.java.ru.clevertec.check.utils.filereader.impl;
 
+import main.java.ru.clevertec.check.exception.BadRequestException;
 import main.java.ru.clevertec.check.exception.InternalServerException;
 import main.java.ru.clevertec.check.model.Product;
 import main.java.ru.clevertec.check.utils.filereader.ProductFileReader;
@@ -10,13 +11,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class CsvProductFileReader implements ProductFileReader {
     @Override
-    public List<Product> parseFile(String filePath) {
+    public List<Product> parseFile(Optional<String> filePath) {
+        if (filePath.isEmpty()) {
+            throw new BadRequestException();
+        }
         List<Product> products = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath.get()))) {
             String line;
             boolean isFirstLine = true;
 
@@ -40,7 +45,7 @@ public class CsvProductFileReader implements ProductFileReader {
                 }
             }
         } catch (IOException e) {
-            throw new InternalServerException("Не удалось прочитать файл продуктов. Файл: %s".formatted(filePath));
+            throw new BadRequestException("Не удалось прочитать файл продуктов. Файл: %s".formatted(filePath));
         }
 
         return products;

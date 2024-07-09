@@ -60,7 +60,7 @@ saveToFile=xxxx - включает относительный (от корнев
 
 Пример параметров для запуска приложения:
 ```bash
-java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 discountCard=1111 balanceDebitCard=100
+java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 discountCard=1111 balanceDebitCard=100 pathToFile=./src/main/resources/products.csv saveToFile=./result2.csv
 ```
 Файл вывода:
 ``` 
@@ -107,17 +107,17 @@ TOTAL WITH DISCOUNT - Итоговая стоимость (TOTAL PRICE - TOTAL D
 
 Запустим программу с наличием ошибки: 
 ```bash
-java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 3-1 2-5 5-1 discountCard=1111 balanceDebitCard=1.23
+java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 3-1 2-5 5-1 discountCard=1111 balanceDebitCard=1.23 saveToFile=./result2.csv
 ```
 Файл вывода:
 ``` 
 ERROR
-NOT ENOUGH MONEY
+BAD REQUEST
 ```
 
 Еще несколько примеров расчета: 
 ```bash
-java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 balanceDebitCard=90.09
+java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 balanceDebitCard=90.09 pathToFile=./src/main/resources/products.csv saveToFile=./result2.csv
 ```
 Файл вывода:
 ``` 

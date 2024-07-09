@@ -1,6 +1,7 @@
 package main.java.ru.clevertec.check.utils.argparser;
 
 import java.util.Map;
+import java.util.Optional;
 
 public class ArgParser {
     public static LaunchParams parse(String[] args) {
@@ -25,6 +26,10 @@ public class ArgParser {
             launchParams.setDiscountCardNum(Integer.parseInt(value));
         } else if ("balanceDebitCard".equals(key)) {
             launchParams.setBalanceDebitCard(Double.parseDouble(value));
+        }  else if ("pathToFile".equals(key)) {
+            launchParams.setPathToFile(Optional.of(value));
+        } else if ("saveToFile".equals(key)) {
+            launchParams.setSaveToFile(Optional.of(value));
         }
     }
 

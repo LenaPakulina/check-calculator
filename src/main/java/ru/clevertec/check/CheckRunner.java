@@ -24,26 +24,27 @@ import main.java.ru.clevertec.check.utils.filereader.impl.CsvProductFileReader;
 public class CheckRunner {
     public static void main(String[] args) {
         PrintToFile printer = new SimplePrintToFile();
+        LaunchParams options = ArgParser.parse(args);
+        String resultFilePath = options.getSaveToFile().orElse("./result.csv");
         try {
-            LaunchParams options = ArgParser.parse(args);
-            CheckService checkService = createCheckService();
+            CheckService checkService = createCheckService(options);
             CheckConverterToString print = new CheckConverterToCsvString();
             String str = print.toString(checkService.createCheck(options));
             System.out.println(str);
-            printer.print("./result.csv", str);
+            printer.print(resultFilePath, str);
         } catch (Exception e) {
             ErrorMsgConverterToString print = new SimpleErrorMsgConverterToString();
             String str = print.toString(e.getMessage());
             System.out.println(str);
-            printer.print("./result.csv", str);
+            printer.print(resultFilePath, str);
         }
     }
 
-    private static CheckService createCheckService() throws RuntimeException {
+    private static CheckService createCheckService(LaunchParams options) throws RuntimeException {
         CsvDiscountFileReader discountFileReader = new CsvDiscountFileReader();
         CsvProductFileReader productFileReader = new CsvProductFileReader();
         ProductStorage productStorage = new ProductStorageInMemory(
-                productFileReader.parseFile("./src/main/resources/products.csv")
+                productFileReader.parseFile(options.getPathToFile())
         );
         ProductService productService = new ProductServiceCsv(productStorage);
         DiscountCardStorage discountCardStorage = new DiscountCardStorageInMemory(

@@ -2,6 +2,7 @@ package main.java.ru.clevertec.check.utils.argparser;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class LaunchParams {
     /** Название и номер дисконтной карты */
@@ -17,6 +18,12 @@ public class LaunchParams {
      * (порядок гарантирован = LinkedHashMap)
      */
     private Map<Integer, Integer> productIdAndCount = new LinkedHashMap<>();
+
+    /** Относительный путь к файлу с продуктами */
+    private Optional<String> pathToFile = Optional.empty();
+
+    /** Относительный путь к файлу результата */
+    private Optional<String> saveToFile = Optional.empty();
 
     public LaunchParams() {
     }
@@ -43,5 +50,21 @@ public class LaunchParams {
 
     public void setProductIdAndCount(Map<Integer, Integer> productIdAndCount) {
         this.productIdAndCount = productIdAndCount;
+    }
+
+    public Optional<String> getPathToFile() {
+        return pathToFile;
+    }
+
+    public void setPathToFile(Optional<String> pathToFile) {
+        this.pathToFile = pathToFile;
+    }
+
+    public Optional<String> getSaveToFile() {
+        return saveToFile;
+    }
+
+    public void setSaveToFile(Optional<String> saveToFile) {
+        this.saveToFile = saveToFile;
     }
 }
