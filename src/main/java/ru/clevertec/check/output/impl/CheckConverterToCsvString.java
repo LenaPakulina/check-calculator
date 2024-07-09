@@ -42,8 +42,8 @@ public class CheckConverterToCsvString implements CheckConverterToString {
             stringBuilder.append("%d;".formatted(dto.getAmount()));
             stringBuilder.append("%s;".formatted(dto.getDescription()));
             stringBuilder.append("%.2f$;".formatted(dto.getPrice()));
-            stringBuilder.append("%.2f$;".formatted(dto.getDiscount()));
-            stringBuilder.append("%.2f$%n".formatted(dto.getTotalPrice()));
+            stringBuilder.append("%.2f$;".formatted((dto.getDiscount() * dto.getAmount())));
+            stringBuilder.append("%.2f$%n".formatted((dto.getPrice() * dto.getAmount())));
         }
     }
 

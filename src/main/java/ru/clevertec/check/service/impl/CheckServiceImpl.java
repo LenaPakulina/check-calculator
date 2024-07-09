@@ -43,8 +43,9 @@ public class CheckServiceImpl implements CheckService {
         List<ProductDTO> productDTOs = new ArrayList<>();
         for (Map.Entry<Product, Integer> productCount : productCountMap.entrySet()) {
             Product product = productCount.getKey();
+            int amount = productCount.getValue();
 
-            int discountPercentages = getDiscountPercentage(product, productCount.getValue(), discountCard);
+            int discountPercentages = getDiscountPercentage(product, amount, discountCard);
             double productPriceWithDiscount = calculationPriceWithDiscount(product.getPrice(), discountPercentages);
             double productDiscount = product.getPrice() - productPriceWithDiscount;
             productDTOs.add(new ProductDTO.Builder()
@@ -53,12 +54,12 @@ public class CheckServiceImpl implements CheckService {
                     .setPrice(product.getPrice())
                     .setDiscount(productDiscount)
                     .setTotalPrice(productPriceWithDiscount)
-                    .setAmount(productCount.getValue())
+                    .setAmount(amount)
                     .build()
             );
-            totalPrice += product.getPrice();
-            totalDiscountSum += productDiscount;
-            totalPriceWithDiscount += productPriceWithDiscount;
+            totalPrice += (product.getPrice() * amount);
+            totalDiscountSum += (productDiscount * amount);
+            totalPriceWithDiscount += (productPriceWithDiscount * amount);
         }
 
         checkValidator.checkBalance(options.getBalanceDebitCard(), totalPriceWithDiscount);
