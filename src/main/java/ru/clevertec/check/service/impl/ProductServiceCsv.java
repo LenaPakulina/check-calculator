@@ -6,6 +6,7 @@ import main.java.ru.clevertec.check.service.ProductService;
 import main.java.ru.clevertec.check.storage.ProductStorage;
 import main.java.ru.clevertec.check.utils.argparser.LaunchParams;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,14 +25,13 @@ public class ProductServiceCsv implements ProductService {
 
     @Override
     public Map<Product, Integer> getProductEntityByOptions(LaunchParams options) {
-        return options.getProductIdAndCount()
-                .keySet()
-                .stream()
-                .collect(Collectors.toMap(
-                        prodId -> productStorage.findById(prodId).orElseThrow(
-                                () -> new BadRequestException("Не удалось найти продукт с id = %d".formatted(prodId))
-                        ),
-                        options.getProductIdAndCount()::get
-                ));
+        Map<Product, Integer> result = new LinkedHashMap<>();
+        for (Integer prodId : options.getProductIdAndCount().keySet()) {
+            Product product = productStorage.findById(prodId).orElseThrow(
+                    () -> new BadRequestException("Не удалось найти продукт с id = %d".formatted(prodId))
+            );
+            result.put(product, options.getProductIdAndCount().get(prodId));
+        }
+        return result;
     }
 }

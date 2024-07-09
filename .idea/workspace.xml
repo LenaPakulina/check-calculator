@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Исправила вывод данных">
+    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="исправление по части округления и вывода чисел">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/dto/TotalPriceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/dto/TotalPriceDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/NotEnoughMoneyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/NotEnoughMoneyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/validator/CheckValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/validator/CheckValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/ProductServiceCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/ProductServiceCsv.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +64,7 @@
       <recent name="C:\projects\delete_me\check-calculator\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.java.ru.clevertec.check.utils.validator" />
       <recent name="main.java.ru.clevertec.check.utils.filereader.impl" />
       <recent name="main.java.ru.clevertec.check.utils.filereader" />
     </key>
@@ -89,6 +86,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CheckRunner" />
         <item itemvalue="Application.CheckRunner" />
         <item itemvalue="Application.CheckRunner" />
       </list>
@@ -175,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720504174066</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="исправление по части округления и вывода чисел">
+      <option name="closed" value="true" />
+      <created>1720505180562</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720505180562</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,7 +194,8 @@
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="Добавила ошибку, если продуктов нет" />
     <MESSAGE value="Исправила вывод данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправила вывод данных" />
+    <MESSAGE value="исправление по части округления и вывода чисел" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправление по части округления и вывода чисел" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
