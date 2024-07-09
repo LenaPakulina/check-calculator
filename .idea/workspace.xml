@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Рефакторинг">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/BadRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/BadRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/InternalServerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/InternalServerException.java" afterDir="false" />
+    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Исправила вывод данных">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/dto/TotalPriceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/dto/TotalPriceDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/NotEnoughMoneyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/exception/NotEnoughMoneyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/validator/CheckValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/validator/CheckValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/entry-file" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +76,7 @@
     <configuration name="CheckRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.ru.clevertec.check.CheckRunner" />
       <module name="check-calculator" />
-      <option name="PROGRAM_PARAMETERS" value="1-3 2-5 1-1 balanceDebitCard=100.23" />
+      <option name="PROGRAM_PARAMETERS" value="13-5 9-1 4-30 1-6 discountCard=1111 balanceDebitCard=90.09" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.ru.clevertec.check.*" />
@@ -84,6 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CheckRunner" />
         <item itemvalue="Application.CheckRunner" />
       </list>
     </recent_temporary>
@@ -153,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720501633786</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавила ошибку, если продуктов нет">
+      <option name="closed" value="true" />
+      <created>1720502188083</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720502188083</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Исправила вывод данных">
+      <option name="closed" value="true" />
+      <created>1720504174066</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720504174066</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,15 +186,17 @@
     <MESSAGE value="Мелкий рефакторинг" />
     <MESSAGE value="Добавила описание README" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
+    <MESSAGE value="Добавила ошибку, если продуктов нет" />
+    <MESSAGE value="Исправила вывод данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправила вывод данных" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/DiscountServiceCsv.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

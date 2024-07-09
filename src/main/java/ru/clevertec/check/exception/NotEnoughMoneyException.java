@@ -6,11 +6,7 @@ package main.java.ru.clevertec.check.exception;
  */
 
 public class NotEnoughMoneyException extends CustomException {
-    public NotEnoughMoneyException(String message) {
-        super("INTERNAL SERVER ERROR%n%s".formatted(message));
-    }
-
     public NotEnoughMoneyException() {
-        super("INTERNAL SERVER ERROR");
+        super("NOT ENOUGH MONEY");
     }
 }

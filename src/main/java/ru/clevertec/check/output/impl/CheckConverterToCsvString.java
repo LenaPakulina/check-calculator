@@ -50,10 +50,16 @@ public class CheckConverterToCsvString implements CheckConverterToString {
     private void addTotalPriceInfo(StringBuilder stringBuilder, CheckDTO checkDTO) {
         stringBuilder.append("TOTAL PRICE;TOTAL DISCOUNT;TOTAL WITH DISCOUNT");
         stringBuilder.append(System.lineSeparator());
+
+        int doubleCastTotalPrice = (int) (checkDTO.getTotalPriceDTO().getTotalPrice() * 100);
+        int doubleCastTotalDiscount = (int) (checkDTO.getTotalPriceDTO().getTotalDiscount() * 100);
+        double totalPrice = (double) doubleCastTotalPrice / 100;
+        double totalDiscount = (double) doubleCastTotalDiscount / 100;
+
         stringBuilder.append("%.2f$;%.2f$;%.2f$".formatted(
-                checkDTO.getTotalPriceDTO().getTotalPrice(),
-                checkDTO.getTotalPriceDTO().getTotalDiscount(),
-                checkDTO.getTotalPriceDTO().getTotalPriceWithDiscount()
+                totalPrice,
+                totalDiscount,
+                totalPrice - totalDiscount
         ));
     }
 

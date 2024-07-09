@@ -38,7 +38,6 @@ public class CheckServiceImpl implements CheckService {
 
         double totalPrice = 0;
         double totalDiscountSum = 0;
-        double totalPriceWithDiscount = 0;
 
         List<ProductDTO> productDTOs = new ArrayList<>();
         for (Map.Entry<Product, Integer> productCount : productCountMap.entrySet()) {
@@ -59,10 +58,9 @@ public class CheckServiceImpl implements CheckService {
             );
             totalPrice += (product.getPrice() * amount);
             totalDiscountSum += (productDiscount * amount);
-            totalPriceWithDiscount += (productPriceWithDiscount * amount);
         }
 
-        checkValidator.checkBalance(options.getBalanceDebitCard(), totalPriceWithDiscount);
+        checkValidator.checkBalance(options.getBalanceDebitCard(), totalPrice - totalDiscountSum);
 
         CheckDTO checkDTO = new CheckDTO();
         checkDTO.setCreated(LocalDateTime.now());
@@ -71,7 +69,6 @@ public class CheckServiceImpl implements CheckService {
         checkDTO.setTotalPriceDTO(new TotalPriceDTO.Builder()
                 .setTotalPrice(totalPrice)
                 .setTotalDiscount(totalDiscountSum)
-                .setTotalPriceWithDiscount(totalPriceWithDiscount)
                 .build()
         );
         return checkDTO;

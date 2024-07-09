@@ -30,13 +30,13 @@ public class CheckValidator {
 
     public void checkStartBalance(double startBalance) {
         if (startBalance < 10e-3) {
-            throw new NotEnoughMoneyException("NOT ENOUGH MONEY");
+            throw new NotEnoughMoneyException();
         }
     }
 
     public void checkBalance(double balance, double finalPrice) {
         if ((balance - finalPrice) < 0.001) {
-            throw new NotEnoughMoneyException("NOT ENOUGH MONEY");
+            throw new NotEnoughMoneyException();
         }
     }
 }

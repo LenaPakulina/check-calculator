@@ -49,23 +49,24 @@ Note:
 
 Пример параметров для запуска приложения:
 ```bash
-java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 3-1 2-5 5-1 discountCard=1111 balanceDebitCard=100
+java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 discountCard=1111 balanceDebitCard=100
 ```
 Файл вывода:
 ``` 
-Date;Time
-09.07.2024;09:58:40
-
-QTY;DESCRIPTION;PRICE;DISCOUNT;TOTAL
-5;Cream 400g;2,71$;0,27$;2,44$
-1;Yogurt 400g;2,10$;0,06$;2,04$
-1;Packed cabbage 1kg;1,19$;0,04$;1,15$
+Date;Time                                
+09.07.2024;11:01:24                      
+                                         
+QTY;DESCRIPTION;PRICE;DISCOUNT;TOTAL     
+6;Milk;1,07$;0,64$;6,42$                 
+30;Packed potatoes 1kg;1,47$;1,32$;44,10$
+1;Packed bananas 1kg;1,10$;0,03$;1,10$   
+5;Baguette 360g;1,30$;0,65$;6,50$
 
 DISCOUNT CARD;DISCOUNT PERCENTAGE
 1111;3
 
 TOTAL PRICE;TOTAL DISCOUNT;TOTAL WITH DISCOUNT
-6,00$;0,37$;5,63$
+58,12$;2,64$;55,48$
 ```
 
 Где:
@@ -99,4 +100,21 @@ ERROR
 NOT ENOUGH MONEY
 ```
 
+Еще несколько примеров расчета: 
+```bash
+java -cp out ./src/main/java/ru/clevertec/check/CheckRunner.java 13-1 9-1 4-30 13-2 1-6 13-2 balanceDebitCard=90.09
+```
+Файл вывода:
+``` 
+Date;Time
+09.07.2024;11:02:09
 
+QTY;DESCRIPTION;PRICE;DISCOUNT;TOTAL
+6;Milk;1,07$;0,64$;6,42$
+30;Packed potatoes 1kg;1,47$;0,00$;44,10$
+1;Packed bananas 1kg;1,10$;0,00$;1,10$
+5;Baguette 360g;1,30$;0,65$;6,50$
+
+TOTAL PRICE;TOTAL DISCOUNT;TOTAL WITH DISCOUNT
+58,12$;1,29$;56,83$
+```
