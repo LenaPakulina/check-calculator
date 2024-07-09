@@ -6,10 +6,10 @@ package main.java.ru.clevertec.check.exception;
 
 public class InternalServerException extends CustomException {
     public InternalServerException(String message) {
-        super(message);
+        super("INTERNAL SERVER ERROR%n%s".formatted(message));
     }
 
-    public InternalServerException(String message, Throwable cause) {
-        super(message, cause);
+    public InternalServerException() {
+        super("INTERNAL SERVER ERROR");
     }
 }

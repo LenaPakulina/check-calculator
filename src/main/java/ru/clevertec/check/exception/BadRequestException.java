@@ -8,6 +8,10 @@ package main.java.ru.clevertec.check.exception;
 
 public class BadRequestException extends CustomException {
     public BadRequestException(String message) {
-        super(message);
+        super("BAD REQUEST%n%s".formatted(message));
+    }
+
+    public BadRequestException() {
+        super("BAD REQUEST");
     }
 }

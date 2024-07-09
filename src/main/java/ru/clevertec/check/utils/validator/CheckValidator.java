@@ -8,6 +8,9 @@ import java.util.Map;
 
 public class CheckValidator {
     public void checkProductsAmount(Map<Product, Integer> productCountMap) {
+        if (productCountMap.isEmpty()) {
+            throw new BadRequestException("Нет списка продуктов.");
+        }
         StringBuilder errorMsg = new StringBuilder();
         for (Product product: productCountMap.keySet()) {
             if (product.getQuantityInStock() < productCountMap.get(product)) {
