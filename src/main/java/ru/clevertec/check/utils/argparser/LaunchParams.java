@@ -3,7 +3,7 @@ package main.java.ru.clevertec.check.utils.argparser;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class LaunchOptions {
+public class LaunchParams {
     /** Название и номер дисконтной карты */
     private int discountCardNum;
 
@@ -18,7 +18,7 @@ public class LaunchOptions {
      */
     private Map<Integer, Integer> productIdAndCount = new LinkedHashMap<>();
 
-    public LaunchOptions() {
+    public LaunchParams() {
     }
 
     public int getDiscountCardNum() {

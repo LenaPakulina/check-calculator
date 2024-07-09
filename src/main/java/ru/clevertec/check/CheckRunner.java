@@ -17,7 +17,7 @@ import main.java.ru.clevertec.check.storage.ProductStorage;
 import main.java.ru.clevertec.check.storage.impl.DiscountCardStorageInMemory;
 import main.java.ru.clevertec.check.storage.impl.ProductStorageInMemory;
 import main.java.ru.clevertec.check.utils.argparser.ArgParser;
-import main.java.ru.clevertec.check.utils.argparser.LaunchOptions;
+import main.java.ru.clevertec.check.utils.argparser.LaunchParams;
 import main.java.ru.clevertec.check.utils.filereader.impl.CsvDiscountFileReader;
 import main.java.ru.clevertec.check.utils.filereader.impl.CsvProductFileReader;
 
@@ -25,7 +25,7 @@ public class CheckRunner {
     public static void main(String[] args) {
         PrintToFile printer = new SimplePrintToFile();
         try {
-            LaunchOptions options = ArgParser.parse(args);
+            LaunchParams options = ArgParser.parse(args);
             CheckService checkService = createCheckService();
             CheckConverterToString print = new CheckConverterToCsvString();
             String str = print.toString(checkService.createCheck(options));

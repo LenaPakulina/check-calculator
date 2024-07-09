@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Мелкий рефакторинг">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result.csv" afterDir="false" />
+    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Добавила описание README">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/CheckRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/CheckRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/SimpleCheckConverterToString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/CheckConverterToCsvString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/CheckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/CheckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/ProductServiceCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/ProductServiceCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/argparser/ArgParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/argparser/ArgParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/argparser/LaunchOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/argparser/LaunchParams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720499573592</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавила описание README">
+      <option name="closed" value="true" />
+      <created>1720501394782</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720501394782</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -148,7 +159,8 @@
     <MESSAGE value="Реализация основного функционала" />
     <MESSAGE value="Сделала вывод на печать" />
     <MESSAGE value="Мелкий рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Мелкий рефакторинг" />
+    <MESSAGE value="Добавила описание README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила описание README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

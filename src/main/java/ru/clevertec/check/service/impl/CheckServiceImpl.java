@@ -8,7 +8,7 @@ import main.java.ru.clevertec.check.model.Product;
 import main.java.ru.clevertec.check.service.CheckService;
 import main.java.ru.clevertec.check.service.DiscountService;
 import main.java.ru.clevertec.check.service.ProductService;
-import main.java.ru.clevertec.check.utils.argparser.LaunchOptions;
+import main.java.ru.clevertec.check.utils.argparser.LaunchParams;
 import main.java.ru.clevertec.check.utils.validator.CheckValidator;
 
 import java.time.LocalDateTime;
@@ -28,7 +28,7 @@ public class CheckServiceImpl implements CheckService {
     }
 
     @Override
-    public CheckDTO createCheck(LaunchOptions options) {
+    public CheckDTO createCheck(LaunchParams options) {
         checkValidator.checkStartBalance(options.getBalanceDebitCard());
 
         Optional<DiscountCard> discountCard = discountService.findByCardNum(options.getDiscountCardNum());
