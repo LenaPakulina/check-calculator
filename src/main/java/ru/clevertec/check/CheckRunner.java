@@ -3,7 +3,7 @@ package main.java.ru.clevertec.check;
 import main.java.ru.clevertec.check.output.CheckConverterToString;
 import main.java.ru.clevertec.check.output.ErrorMsgConverterToString;
 import main.java.ru.clevertec.check.output.PrintToFile;
-import main.java.ru.clevertec.check.output.impl.SimpleCheckConverterToString;
+import main.java.ru.clevertec.check.output.impl.CheckConverterToCsvString;
 import main.java.ru.clevertec.check.output.impl.SimpleErrorMsgConverterToString;
 import main.java.ru.clevertec.check.output.impl.SimplePrintToFile;
 import main.java.ru.clevertec.check.service.CheckService;
@@ -27,7 +27,7 @@ public class CheckRunner {
         try {
             LaunchOptions options = ArgParser.parse(args);
             CheckService checkService = createCheckService();
-            CheckConverterToString print = new SimpleCheckConverterToString();
+            CheckConverterToString print = new CheckConverterToCsvString();
             String str = print.toString(checkService.createCheck(options));
             System.out.println(str);
             printer.print("./result.csv", str);

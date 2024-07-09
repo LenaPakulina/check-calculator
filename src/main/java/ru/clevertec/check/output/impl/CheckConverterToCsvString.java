@@ -7,7 +7,7 @@ import main.java.ru.clevertec.check.output.CheckConverterToString;
 
 import java.time.format.DateTimeFormatter;
 
-public class SimpleCheckConverterToString implements CheckConverterToString {
+public class CheckConverterToCsvString implements CheckConverterToString {
     @Override
     public String toString(CheckDTO checkDTO) {
         StringBuilder stringBuilder = new StringBuilder();
