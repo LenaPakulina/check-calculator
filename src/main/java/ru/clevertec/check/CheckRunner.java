@@ -26,18 +26,7 @@ public class CheckRunner {
         PrintToFile printer = new SimplePrintToFile();
         try {
             LaunchOptions options = ArgParser.parse(args);
-            CsvDiscountFileReader discountFileReader = new CsvDiscountFileReader();
-            CsvProductFileReader productFileReader = new CsvProductFileReader();
-            ProductStorage productStorage = new ProductStorageInMemory(
-                    productFileReader.parseFile("./src/main/resources/products.csv")
-            );
-            ProductService productService = new ProductServiceCsv(productStorage);
-            DiscountCardStorage discountCardStorage = new DiscountCardStorageInMemory(
-                    discountFileReader.parseFile("./src/main/resources/discountCards.csv")
-            );
-            DiscountService discountService = new DiscountServiceCsv(discountCardStorage);
-            CheckService checkService = new CheckServiceImpl(productService, discountService);
-
+            CheckService checkService = createCheckService();
             CheckConverterToString print = new SimpleCheckConverterToString();
             String str = print.toString(checkService.createCheck(options));
             System.out.println(str);
@@ -48,5 +37,20 @@ public class CheckRunner {
             System.out.println(str);
             printer.print("./result.csv", str);
         }
+    }
+
+    private static CheckService createCheckService() throws RuntimeException {
+        CsvDiscountFileReader discountFileReader = new CsvDiscountFileReader();
+        CsvProductFileReader productFileReader = new CsvProductFileReader();
+        ProductStorage productStorage = new ProductStorageInMemory(
+                productFileReader.parseFile("./src/main/resources/products.csv")
+        );
+        ProductService productService = new ProductServiceCsv(productStorage);
+        DiscountCardStorage discountCardStorage = new DiscountCardStorageInMemory(
+                discountFileReader.parseFile("./src/main/resources/discountCards.csv")
+        );
+        DiscountService discountService = new DiscountServiceCsv(discountCardStorage);
+        CheckService checkService = new CheckServiceImpl(productService, discountService);
+        return checkService;
     }
 }

@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Реализация основного функционала">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/PrintToFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/output/impl/SimplePrintToFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/utils/validator/CheckValidator.java" afterDir="false" />
+    <list default="true" id="bbe7d85b-1da7-4b86-ae3a-8bea484228ea" name="Changes" comment="Сделала вывод на печать">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/CheckRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/CheckRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/clevertec/check/service/impl/CheckServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +32,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2iy9zhBIMnM9JJLO4YEOhG2KMGl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,11 +52,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature/entry-core",
-    "last_opened_file_path": "C:/projects/delete_me/check-calculator/src/main/java/ru/clevertec/check"
+    "last_opened_file_path": "C:/projects/delete_me/check-calculator"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\delete_me\check-calculator" />
       <recent name="C:\projects\delete_me\check-calculator\src\main\java\ru\clevertec\check" />
       <recent name="C:\projects\delete_me\check-calculator\src\main\java\ru\clevertec\check\storage" />
     </key>
@@ -120,14 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720461217985</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Сделала вывод на печать">
+      <option name="closed" value="true" />
+      <created>1720463258318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720463258318</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first init" />
     <MESSAGE value="Описала базовые модели в приложении" />
     <MESSAGE value="Реализация основного функционала" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализация основного функционала" />
+    <MESSAGE value="Сделала вывод на печать" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделала вывод на печать" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
